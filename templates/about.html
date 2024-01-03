@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>About Us</h1>
+    <p>Welcome to our garage! We are dedicated to providing top-notch car services and products to our customers.</p>
+    <p>With years of experience, our team ensures your vehicle gets the best care possible.</p>
+
+    <div class="container mt-4" >
+        <h2 class="text-primary"  id="hoverText" onmouseenter="redd()">Hover over this text!</h2>
+    </div>
+    <script>
+        function redd (){
+            console.log("test");
+            hoverText.style.color = 'red';
+        }
+
+        hoverText.addEventListener('mouseleave', function() {
+            hoverText.style.color = 'black';
+        });
+    </script>
+{% endblock %}
+
+{% block scripts %}
+    
+{% endblock %}

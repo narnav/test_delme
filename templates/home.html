@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Welcome to My Garage</h1>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Car Repairs</li>
+                <li>Tire Replacement</li>
+                <li>Oil Changes</li>
+                <li>Brake Services</li>
+                <!-- Add more services as needed -->
+            </ul>
+        </div>
+        
+        <div class="col-md-6">
+            <h2>Featured Products</h2>
+            <div class="card">
+                <img src="https://picsum.photos/200/200" class="card-img-top" alt="Featured Product">
+                <div class="card-body">
+                    <h5 class="card-title">Product Title</h5>
+                    <p class="card-text">Product description goes here.</p>
+                    <a href="#" class="btn btn-primary">View Product</a>
+                </div>
+            </div>
+            <!-- Add more featured products as needed -->
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2>About Us</h2>
+            <p>Welcome to our garage! We are dedicated to providing top-notch car services and products to our customers.</p>
+            <p>With years of experience, our team ensures your vehicle gets the best care possible.</p>
+        </div>
+    </div>
+{% endblock %}

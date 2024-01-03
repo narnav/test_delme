@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Information</title>
+    <style>
+        /* Basic styling for the display */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .car-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .car-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .car-info {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="car-container">
+    <!-- JSON data will be dynamically added here -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    // Fetch data from the server using Axios
+    axios.get('http://127.0.0.1:5000/test')
+        .then(function (response) {
+            // Handle success
+            const carData = response.data;
+            const carContainer = document.querySelector('.car-container');
+            
+            carData.forEach(car => {
+                const carCard = document.createElement('div');
+                carCard.classList.add('car-card');
+                carCard.innerHTML = `
+                    <h3>Car Model: ${car.model}</h3>
+                    <div class="car-info">Color: ${car.color}</div>
+                `;
+                carContainer.appendChild(carCard);
+            });
+        })
+        .catch(function (error) {
+            // Handle error
+            console.error('Error fetching data:', error);
+        });
+</script>
+
+</body>
+</html>
